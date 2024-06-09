@@ -11,6 +11,8 @@ https://cloud.google.com/bigquery/docs/reference/libraries#client-libraries-inst
 
 Downloads can also be made through their web interface.
 
+A sample data slice is provided here: https://duke.box.com/s/m6ygdkfhfh84b0kxmrkg50paeq1gtdkb
+
 As the structure of bigquery-public-data.crypto_ethereum is periodically updated, we will continuously modify extract.sql to maintain compatibility with the schema defined by CrypQ. As of June 8th, 2024, the schema of bigquery-public-data.crypto_ethereum has changed following the completion of this benchmark. Consequently, the original extraction queries are no longer functional, but updates are forthcoming.
 
 ### 2. Post-processing to clean up the extracted data
