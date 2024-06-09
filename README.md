@@ -1,4 +1,4 @@
-# Database-Benchmark
+# CrypQ
 ### 1. Extracting data from Big Query
 
 Data should be extracted from this dataset:
