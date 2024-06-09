@@ -30,10 +30,23 @@ Then run fix_json.py
 
 Create a database called ***CrypQ*** in Postgres, run the following command in psql
 ```
-\i /File_Path/Database-Benchmark/create_db.sql
+\i /File_Path/CrypQ/create_db.sql
 ```
 Within the create_db.sql file, ensure that all paths to JSON files are correct
 
 ### 5. Update workload
 
+Run the following psql command to prepare the update workload
+```
+\i /File_Path/CrypQ/update_workload/setup_update.sql
+```
+Depending on if you wish to run an update workload that only includes insertions and updates, or if you would like the database to undergo changes in the format of a sliding window, run
+```
+\i /File_Path/CrypQ/update_workload/setup_update.sql
+```
+or
+```
+\i /File_Path/CrypQ/update_workload/setup_update.sql
+```
+If you wish to have these updates take place in realistic time, basic boilerplate to set this up has been included in example_update_usage.py
 
