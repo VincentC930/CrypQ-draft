@@ -50,5 +50,5 @@ or
 ```
 \i /File_Path/CrypQ/update_workload/sliding_window_update.sql
 ```
-If you wish to have updates simulated according to original timestamps, basic boilerplate provided in example_update_usage.py
+If you wish to have updates simulated according to original timestamps, basic boilerplate is provided in example_update_usage.py
 
