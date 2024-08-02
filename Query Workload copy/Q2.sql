@@ -1,3 +1,7 @@
+/*
+The following query looks for large token transactions, in which between 0.5 and 0.75
+percent of the total supply of a token were transacted
+*/
 SELECT a.address, tokens.symbol, SUM(t_t.value) AS total_value_transacted, tokens.total_supply
 FROM Token_Transactions t_t, Transactions t, Tokens tokens, Addresses a
 WHERE t_t.token_address = tokens.address

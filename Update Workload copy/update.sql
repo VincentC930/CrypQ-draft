@@ -3,7 +3,6 @@ SELECT *
 FROM BLOCKS
 WHERE NUMBER = {curr_update_block};
 
--- this did not work
 INSERT INTO CURR_TRANSACTIONS
 SELECT *
 FROM TRANSACTIONS
@@ -228,3 +227,16 @@ SET ETH_BALANCE = C.ETH_BALANCE + COALESCE(R.total_received, 0) - COALESCE(S.tot
 FROM RelevantAddresses C
 LEFT OUTER JOIN SentInNewBlock S ON C.ADDRESS = S.ADDRESS
 LEFT OUTER JOIN ReceivedInNewBlock R ON C.ADDRESS = R.ADDRESS;
+
+DROP TABLE IF EXISTS Temp_Relevant_From_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_To_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Miner_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Withdrawals_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Contract_Addresses_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Address_Updated CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_From_Current CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_To_Current CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Miner_Current CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Withdrawals_Current CASCADE;
+DROP TABLE IF EXISTS Temp_Contract_Addresses_Current CASCADE;
+DROP TABLE IF EXISTS Temp_Relevant_Address_Current CASCADE;

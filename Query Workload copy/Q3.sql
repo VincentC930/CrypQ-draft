@@ -1,3 +1,7 @@
+/*
+The following query returns the average duration after contract creation before 
+it is first used
+*/
 WITH Creation AS (
 	SELECT c.address AS address, c.version AS version, b.number AS number
 	FROM Contracts c, Blocks b

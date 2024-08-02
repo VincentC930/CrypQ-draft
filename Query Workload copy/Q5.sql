@@ -1,3 +1,8 @@
+/*
+For the 5 most popular tokens in this window (ordered by the number of transactions 
+they were involved in), the following query outputs the top 10 users who sent the 
+most of each of these tokens
+*/
 WITH Popular_Tokens AS (
 	SELECT tokens.address token_address, tokens.symbol token_symbol, COUNT(*) transactions
 	FROM Tokens tokens, Transactions t, Token_Transactions t_t

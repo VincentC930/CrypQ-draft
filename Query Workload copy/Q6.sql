@@ -1,3 +1,11 @@
+/*
+The following query looks at transactions that involve more than 75% of a user's Ethereum
+balance, where the user was willing to pay a priority gas fee that was higher than the average
+that others paid within this block
+
+A possible interpretation is that this looks at users who were in a hurry to transact the 
+majority of their balance
+*/
 SELECT t1.hash
 FROM Transactions t1, Addresses a
 WHERE t1.from_address = a.address
