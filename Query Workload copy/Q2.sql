@@ -1,12 +1,13 @@
 /*
-The following query looks for large token transactions, in which between 0.5 and 0.75
-percent of the total supply of a token were transacted
+The following query looks for users that frequently make large token transactions, 
+in which a they send between 0.5 and 0.75 percent of the total supply in a single 
+transaction
 */
-SELECT a.address, tokens.symbol, SUM(t_t.value) AS total_value_transacted, tokens.total_supply
-FROM Token_Transactions t_t, Transactions t, Tokens tokens, Addresses a
+SELECT t.from_address, tokens.symbol, COUNT(*)
+FROM Token_Transactions t_t, Transactions t, Tokens tokens
 WHERE t_t.token_address = tokens.address
 AND t.hash = t_t.transaction_hash
-AND (a.address = t.to_address OR a.address = t.from_address)
 AND t_t.value >= (tokens.total_supply * 0.5)
 AND t_t.value <= (tokens.total_supply * 0.75)
-GROUP BY a.address, tokens.symbol, tokens.total_supply;
+GROUP BY t.from_address, tokens.symbol, tokens.total_supply
+ORDER BY DESC COUNT(*);
